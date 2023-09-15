@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Sayfası</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Giriş Yap</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Kullanıcı Adı:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="button" onclick="checkLogin()">Giriş Yap</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkLogin() {
+            // Yukarıdaki JavaScript kodunu buraya ekleyin.
+            const usernameElement = document.getElementById("username");
+            const passwordElement = document.getElementById("password");
+            const username = usernameElement ? usernameElement.value : "";
+            const password = passwordElement ? passwordElement.value : "";
+
+            // Kullanıcı adı ve şifre kontrolü yapın ve sonucu görüntüle
+            if (username === "Burcu" && password === "8237") {
+                window.location.href = "anasayfa.html";
+            } else {
+                document.getElementById("result").innerHTML = "Giriş Başarısız! Kullanıcı adı veya şifre yanlış.";
+                document.getElementById("result").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
